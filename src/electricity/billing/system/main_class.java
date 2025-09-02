@@ -1,0 +1,58 @@
+package electricity.billing.system;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class main_class extends JFrame {
+    main_class(){
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+
+        ImageIcon ImageIcon=new ImageIcon(ClassLoader.getSystemResource("icon/ebs.png"));
+        Image image=ImageIcon.getImage().getScaledInstance(1300,650,Image.SCALE_DEFAULT);
+        ImageIcon imageIcon2=new ImageIcon(image);
+        JLabel imageLable=new JLabel(imageIcon2);
+        add(imageLable);
+
+        JMenuBar menuBar= new JMenuBar();
+        setJMenuBar(menuBar);
+
+        JMenu menu=new JMenu("Menu");
+        menu.setFont(new Font("serif",Font.PLAIN,15));
+        menuBar.add(menu);
+
+        JMenuItem newcustomer=new JMenuItem("New Customer");
+        newcustomer.setFont(new Font("monospaced",Font.PLAIN,14));
+        ImageIcon customerImg=new ImageIcon(ClassLoader.getSystemResource("icon/newcustomer.png"));
+        Image customerImage=customerImg.getImage().getScaledInstance(20,20,Image.SCALE_DEFAULT);
+        newcustomer.setIcon(new ImageIcon(customerImage));
+        menu.add(newcustomer);
+
+        JMenuItem customerdetails =new JMenuItem("Customer Details");
+        customerdetails.setFont(new Font("monospaced",Font.PLAIN,14));
+        ImageIcon customerdetailsImg=new ImageIcon(ClassLoader.getSystemResource("icon/customerDetails.png"));
+        Image customerdetailsImage=customerdetailsImg.getImage().getScaledInstance(20,20,Image.SCALE_DEFAULT);
+        customerdetails.setIcon(new ImageIcon(customerdetailsImage));
+        menu.add(customerdetails);
+
+        JMenuItem depositdetails=new JMenuItem("Deposit Details");
+        depositdetails.setFont(new Font("monospaced",Font.PLAIN,14));
+        ImageIcon depositdetailsImg=new ImageIcon(ClassLoader.getSystemResource("icon/depositdetails.png"));
+        Image depositdetailsImage=depositdetailsImg.getImage().getScaledInstance(20,20,Image.SCALE_DEFAULT);
+        depositdetails.setIcon(new ImageIcon(depositdetailsImage));
+        menu.add(depositdetails);
+
+        JMenuItem calculatebill=new JMenuItem("Calculate Bill");
+        calculatebill.setFont(new Font("monospaced",Font.PLAIN,14));
+        ImageIcon calculatebillImg=new ImageIcon(ClassLoader.getSystemResource("icon/calculatorbills.png"));
+        Image calculatbillImage=calculatebillImg.getImage().getScaledInstance(20,20,Image.SCALE_DEFAULT);
+        calculatebill.setIcon(new ImageIcon(calculatbillImage));
+        menu.add(calculatebill);
+
+
+        setLayout(new FlowLayout());
+        setVisible(true);
+    }
+    public static void main(String[] args) {
+        new main_class();
+    }
+}
